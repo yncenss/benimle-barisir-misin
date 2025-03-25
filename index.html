@@ -6,14 +6,21 @@
     <title>Benimle Barışır Mısın?</title>
     <style>
         body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            margin-top: 100px;
-        }
-        #container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffcccc;
+        }
+        h1 {
+            color: #d9534f;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
         }
         button {
             font-size: 20px;
@@ -21,36 +28,33 @@
             margin: 10px;
             border: none;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 10px;
         }
-        #yes {
-            background-color: green;
+        .yes {
+            background-color: #5cb85c;
             color: white;
         }
-        #no {
-            background-color: red;
+        .no {
+            background-color: #d9534f;
             color: white;
             position: absolute;
         }
     </style>
 </head>
 <body>
-    <div id="container">
-        <h1>Benimle Barışır Mısın?</h1>
-        <button id="yes" onclick="showMessage()">Evet</button>
-        <button id="no" onmouseover="moveButton()">Hayır</button>
+    <h1>Benimle Barışır Mısın? ❤️</h1>
+    <div class="buttons">
+        <button class="yes" onclick="alert('Beni seçtiğin için teşekkür ederim! ❤️')">Evet</button>
+        <button class="no" onmouseover="moveButton()">Hayır</button>
     </div>
     
     <script>
-        function showMessage() {
-            document.getElementById("container").innerHTML = "<h1>Yaşasın! Barıştık! 🎉</h1>";
-        }
-        
         function moveButton() {
-            let x = Math.random() * (window.innerWidth - 100);
-            let y = Math.random() * (window.innerHeight - 50);
-            document.getElementById("no").style.left = `${x}px`;
-            document.getElementById("no").style.top = `${y}px`;
+            const button = document.querySelector('.no');
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
         }
     </script>
 </body>
